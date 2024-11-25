@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción a Charlas</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="cargaDatos.js" defer></script>
+</head>
+<body class="container mt-5">
+
+    <h2>Inscripción a Charlas</h2>
+
+    <form id="formInscripcion" class="needs-validation" novalidate method="POST" action="inscribirEstudiante.php">
+        <div id="errorGeneral" class="text-danger d-none"></div>
+        <div class="form-group">
+            <label for="legajo">Legajo</label>
+            <input type="number" class="form-control" id="legajo" name="legajo" required>
+            <div class="invalid-feedback" id="errorLegajo"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" disabled>
+            <div class="invalid-feedback" id="errorNombre"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="mail">Correo electrónico</label>
+            <input type="email" class="form-control" id="mail" name="mail" disabled>
+            <div class="invalid-feedback" id="errorMail"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="charla">Charla</label>
+            <select class="form-control" id="charla" name="charla" required>
+                <option value="">Seleccione una charla</option>
+                <!-- Opciones cargadas dinámicamente desde la BD -->
+            </select>
+            <div class="invalid-feedback" id="errorCharla"></div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Inscribirse</button>
+    </form>
+
+</body>
+</html>
